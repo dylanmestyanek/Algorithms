@@ -1,10 +1,20 @@
 #!/usr/bin/python
 
-import math
-
 def recipe_batches(recipe, ingredients):
-  pass 
+  values = []
+  for i in recipe:
+        if i not in ingredients:
+              return 0
+        else:
+            values.append(ingredients[i] // recipe[i])
 
+  smallest = values[0]
+  for i in range(len(values)):
+      if values[i] < smallest:
+          smallest = values[i]
+          
+  return smallest
+    
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
